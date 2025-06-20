@@ -2,14 +2,13 @@
 
 ## Supported Versions
 
-V.01
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| V.01    | :white_check_mark: |
+| V.00    | :x:                |
+| V.00    | :x:                |
+| V.00    | :x:                |
 
 ## Reporting a Vulnerability
 
