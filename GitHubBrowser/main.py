@@ -6,13 +6,17 @@ class KeepAliveHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.end_headers()
-        self.wfile.write(b'Bot is alive!')
+        self.wfile.write(b'✅ Bot is alive!')
+
 
 def start_keep_alive():
-    port = int(os.environ.get('PORT', 8080))
-    server = HTTPServer(('0.0.0.0', port), KeepAliveHandler)
-    print(f"✅ Keep-alive server running on port {port}")
-    server.serve_forever()
+    try:
+        port = int(os.environ.get('PORT', 8080))
+        server = HTTPServer(('0.0.0.0', port), KeepAliveHandler)
+        print(f"✅ Keep-alive server running on port {port}")
+        server.serve_forever()
+    except Exception as e:
+        print(f"❌ Failed to start keep-alive server: {e}")
 
 threading.Thread(target=start_keep_alive, daemon=True).start()
 
