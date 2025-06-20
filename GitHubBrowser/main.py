@@ -1,3 +1,12 @@
+import threading
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+
+def start_keep_alive():
+    server = HTTPServer(('0.0.0.0', 8080), SimpleHTTPRequestHandler)
+    server.serve_forever()
+
+threading.Thread(target=start_keep_alive).start()
+
 import discord
 from discord.ext import commands
 import asyncio
