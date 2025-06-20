@@ -1,0 +1,192 @@
+📬 Suggestion System (5+ Commands)
+
+!suggest <message> – Submit a suggestion
+
+!suggestions – View suggestion board
+
+!suggeststatus <id> <status> – Set status (Under Review, Approved, Denied)
+
+!setsuggestchannel <#channel> – Suggestion display channel
+
+!votesuggest <id> – Upvote/downvote a suggestion
+
+📄 Application System (6+ Commands)
+
+User Applications:
+
+!apply <type> – Start an application (staff, club, etc.)
+
+!appform <type> – View current form questions
+
+!cancelapp – Cancel active application
+
+Admin Tools:
+
+!applications – View submitted applications
+
+!review <application_id> – Approve/deny/review applications
+
+!setapplications <channel> – Set application log channel
+
+🤝 Affiliate System (6+ Commands)
+
+Public & Partner Usage:
+
+!affiliate request <server_link> – Submit affiliate request
+
+!affiliates – List all current affiliate servers
+
+Admin Tools:
+
+!approveaffiliate <request_id> – Approve an affiliate
+
+!revokeaffiliate <server> – Remove from affiliate list
+
+!affiliatesetup – Configure affiliate display style/channel
+
+!affiliatelog <channel> – Set affiliate activity log
+
+🎮 Economy System (25+ Commands)
+
+Core Economy:
+
+!balance / !bal
+
+!daily, !weekly, !work, !crime
+
+!deposit, !withdraw, !pay
+
+Casino & Games:
+
+!slots, !blackjack, !lottery, !coinflip, !dice
+
+Shopping & Items:
+
+!shop, !buy, !inventory, !use, !sell
+
+Jobs System:
+
+!job, !apply <job>, !resign, !salary
+
+🐾 Pet System (15+ Commands)
+
+!adopt, !pets, !pet info, !feed, !play, !train
+
+!hunt, !fish, !battle, !breed, !pet rename
+
+🎲 Fun & Games (30+ Commands)
+
+Party Games:
+
+!rps, !8ball, !dice, !flip, !trivia, !hangman, !tictactoe
+
+Random Fun:
+
+!meme, !joke, !fact, !quote, !roast, !compliment
+
+Creative Commands:
+
+!ascii, !reverse, !mock, !leet, !ship
+
+🛡️ Moderation Tools (20+ Commands)
+
+Member Management:
+
+!ban, !unban, !kick, !mute, !unmute, !warn, !warnings
+
+Channel Management:
+
+!lock, !unlock, !lockdown, !slowmode, !purge, !clear
+
+Role Management:
+
+!addrole, !removerole, !autorole
+
+🔧 Utility Commands (25+ Commands)
+
+Information:
+
+!userinfo, !serverinfo, !avatar, !roleinfo, !channelinfo, !botinfo
+
+Tools:
+
+!poll, !remind, !timer, !calculator, !qr, !password
+
+Conversion & Utilities:
+
+!weather, !time, !color, !translate
+
+📊 Analytics System (12+ Commands)
+
+!analytics, !activity, !growth, !engagement, !popular
+
+!mystats, !userstats, !leaderboard, !insights
+
+🎯 Leveling System (10+ Commands)
+
+!level, !rank, !leaderboard, !setlevel, !addxp
+
+!xp toggle, !xp rate, !xp rewards
+
+👥 Community Features (15+ Commands)
+
+Social Features:
+
+!marry, !divorce, !family, !friends, !birthday set
+
+Server Community:
+
+!clubs, !events, !confession, !highlight, !quote
+
+⚙️ Management Tools (18+ Commands)
+
+Server Setup:
+
+!serversetup, !prefix, !settings
+
+Channel Management:
+
+!welcome, !goodbye, !log
+
+Advanced Features:
+
+!giveaway, !announcement, !embed, !reactionrole, !ticket system, !maintenance
+
+📝 Comprehensive Logging System
+
+Setup & Configuration:
+
+!logconfig channel, !logconfig settings, !logconfig toggle, !logconfig stats, /logging
+
+Tracked Activities:
+
+Messages (sent/edited/deleted), Command usage, Joins/leaves, Role changes
+
+🎁 Special Systems
+
+Giveaway system
+
+Invite tracking
+
+Welcome messages & auto-roles
+
+📈 Advanced Leaderboards
+
+!econlb, !xpboard, !petboard
+
+🔔 Notification Tools
+
+!selfroles, !notifyme, !watch
+
+🔐 Security & Anti-Raid Additions
+
+!antiraid toggle, !captcha toggle, !flagged, !verify
+
+🔄 Automation & Schedules
+
+!autoreact, !autorespond, !autoschedule
+
+📚 Help System Enhancements
+
+!help <category>, /commands, !commandinfo
+

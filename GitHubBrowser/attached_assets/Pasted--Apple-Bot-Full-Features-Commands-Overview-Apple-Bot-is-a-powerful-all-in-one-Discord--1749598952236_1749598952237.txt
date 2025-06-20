@@ -1,0 +1,164 @@
+**🍎 Apple Bot - Full Features & Commands Overview**
+
+Apple Bot is a powerful, all-in-one Discord bot built to serve as the backbone of any thriving community. With expert-grade moderation, a deeply engaging economy, dynamic social systems, robust utility tools, and a hybrid command structure (20 slash commands, 180 prefix commands), Apple Bot is designed for performance, customization, and fun — all without requiring an OpenAI API key or other paid API services.
+
+---
+
+## ⚙️ System Architecture
+
+* **Total Commands**: 200
+
+  * **Slash Commands (/)**: 20 critical commands using Discord's built-in UI
+  * **Prefix Commands (!)**: 180 customizable, traditional commands
+* **Prefix Default**: `!` (changeable via `!setprefix`)
+
+---
+
+## 🔨 Moderation Suite (19 Commands)
+
+Apple Bot includes enterprise-level moderation tools to protect and manage your server.
+
+* `!ban`, `!kick`, `!warn`, `!mute`, `!timeout`, `!unban`, `!untimeout`, `!softban`
+* `!massban`, `!masskick` — Perform actions on multiple users at once
+* `!purge`, `!lockdown`, `!unlock` — Chat and channel control
+* `!filter`, `!automod` — Word filters, anti-spam/raid tools
+* `!cases`, `!infractions`, `!note`, `!logs` — User moderation history and logging
+
+---
+
+## 💰 Economy System (24 Commands)
+
+Build a fun, engaging economy with jobs, investments, gambling, and crafting.
+
+* **Core**: `!balance`, `!pay`, `!deposit`, `!withdraw`, `!give`, `!daily`, `!work`, `!beg`
+* **Gambling**: `!rob`, `!gamble`, `!slots`, `!blackjack`, `!coinflip`, `!lottery`
+* **Earnings**: `!hunt`, `!fish`, `!mine`, `!farm`, `!chop`, `!dig`, `!crime`, `!search`
+* **Investments**: `!invest`, `!loan`, `!bank`, `!cooldowns`
+* **Crafting/Trading**: `!cook`, `!craft`, `!shop`, `!buy`, `!sell`, `!inventory`
+* **Leaderboard**: `!richest`, `!top`
+
+---
+
+## 🐾 Pet System (15 Commands)
+
+Raise and battle pets in a full-featured RPG-style companion system.
+
+* `!adopt`, `!pet`, `!feed`, `!train`, `!breed`, `!evolve`, `!heal`, `!rename`, `!abandon`
+* `!petplay`, `!battle`, `!petshop`, `!pettop`, `!petinfo`, `!petcare`
+
+---
+
+## 🎮 Fun & Games (26 Commands)
+
+Mini-games, trivia, jokes, and more to keep users entertained.
+
+* `!trivia`, `!8ball`, `!joke`, `!meme`, `!riddle`, `!quiz`, `!rps`, `!flip`, `!roll`, `!dice`, `!choose`, `!number`
+* `!hangman`, `!wordle`, `!akinator`, `!connect4`, `!tictactoe`, `!chess`, `!poker`, `!uno`
+* `!truth`, `!dare`, `!story`, `!rap`, `!roast`, `!compliment`
+
+---
+
+## 🎵 Music Player (23 Commands)
+
+Stream music directly into voice channels with playlist control.
+
+* `!play`, `!pause`, `!stop`, `!skip`, `!queue`, `!nowplaying`, `!shuffle`, `!loop`, `!repeat`
+* `!volume`, `!seek`, `!clear`, `!remove`, `!join`, `!leave`, `!save`
+* **FX Filters**: `!bassboost`, `!nightcore`, `!slowmode`, `!8d`, `!reverb`
+* `!autoplay`, `!lyrics`
+
+---
+
+## 🛠️ Utility & Tools (23 Commands)
+
+Helpful server and productivity tools.
+
+* `!ping`, `!serverinfo`, `!userinfo`, `!avatar`, `!banner`, `!roleinfo`, `!channelinfo`
+* `!weather`, `!time`, `!translate`, `!define`, `!urban`, `!wiki`, `!google`, `!youtube`
+* `!image`, `!gif`, `!qr`, `!shorten`, `!poll`, `!vote`, `!remindme`, `!calc`, `!notepad`
+
+---
+
+## 📈 Leveling & XP System (8 Commands)
+
+Gamify your server with XP, levels, badges, and missions.
+
+* `!level`, `!rank`, `!xp`, `!progress`, `!achievements`, `!badges`, `!streaks`, `!challenges`
+
+---
+
+## 📊 Analytics & Engagement (15 Commands)
+
+Understand and grow your community with built-in analytics.
+
+* `!stats`, `!leaderboard`, `!activity`, `!insights`, `!engagement`, `!growth`, `!metrics`
+* `!heatmap`, `!messagecount`, `!joinleave`, `!wordusage`, `!reports`, `!dashboard`, `!top`, `!trends`
+
+---
+
+## 👥 Community & Social (10 Commands)
+
+Encourage bonding and participation.
+
+* `!marry`, `!divorce`, `!family`, `!friends`, `!clubs`, `!groups`, `!events`, `!calendar`, `!reminders`, `!social`
+* **Extras**: `!birthday`, `!qotd`, `!confess`, `!highlight`, `!quote`
+
+---
+
+## 🧰 Server Management (19 Commands)
+
+Flexible server configuration for staff and admins.
+
+* `!serversetup`, `!setprefix`, `!autorole`, `!welcome`, `!goodbye`, `!logging`, `!tickets`
+* `!giveaway`, `!announce`, `!embed`, `!reaction`, `!starboard`, `!suggestions`, `!forms`
+* `!rolemenu`, `!backup`, `!restore`, `!audit`, `!config`, `!settings`
+
+---
+
+## ✅ Required Slash Commands (20)
+
+These commands are built into Discord's slash system for easy access and speed.
+
+1. `/balance` – View your balance
+2. `/give` – Transfer currency
+3. `/daily` – Claim daily reward
+4. `/work` – Perform a job
+5. `/warn` – Issue a warning
+6. `/kick` – Kick a user
+7. `/ban` – Ban a user
+8. `/userinfo` – Get user info
+9. `/serverinfo` – View server stats
+10. `/ticket` – Open a support ticket
+11. `/announce` – Send a rich embed announcement
+12. `/poll` – Start a poll
+13. `/remindme` – Set a reminder
+14. `/translate` – Translate text
+15. `/weather` – Check the weather
+16. `/play` – Play music
+17. `/skip` – Skip current song
+18. `/queue` – Show song queue
+19. `/feedback` – Submit feedback or suggestion
+20. `/settings` – Adjust personal or server settings
+
+---
+
+## 🔒 Security Systems
+
+* **Anti-Spam/Anti-Raid**: Automated detection + response
+* **Captcha on Join**: Optional verification system
+* **Logging**: Actions, joins/leaves, edits, deletes, infractions
+* **Filter System**: Block words, links, invites, and more
+
+---
+
+## 🧠 Smart Commands (Local Logic Only — No Paid APIs)
+
+All "AI-like" functions use internal logic trees or user-submitted data. **No OpenAI API key or paid service is required.**
+
+* `!ask`, `!rewrite`, `!summarize`, `!idea` – Simulated assistance using local logic or prebuilt templates
+
+---
+
+## 🏁 Summary
+
+Apple Bot is your all-in-one toolkit for creating a vibrant, fun, and secure Discord community. With rich customization options, activity loops, and powerful admin tools, it delivers an experience that grows with your server — whether you're managing a gaming community
