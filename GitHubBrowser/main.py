@@ -1,11 +1,17 @@
 import os
 import threading
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+class KeepAliveHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b'Bot is alive!')
 
 def start_keep_alive():
-    port = int(os.environ.get("PORT", 8080))  # Use Render's provided port or fallback
-    server = HTTPServer(("0.0.0.0", port), SimpleHTTPRequestHandler)
-    print(f"Starting keep-alive server on port {port}")
+    port = int(os.environ.get('PORT', 8080))
+    server = HTTPServer(('0.0.0.0', port), KeepAliveHandler)
+    print(f"✅ Keep-alive server running on port {port}")
     server.serve_forever()
 
 threading.Thread(target=start_keep_alive, daemon=True).start()
