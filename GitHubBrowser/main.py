@@ -1,24 +1,3 @@
-import os
-import threading
-from http.server import HTTPServer, BaseHTTPRequestHandler
-
-class KeepAliveHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/plain')
-        self.end_headers()
-        self.wfile.write(b"✅ Apple Bot is alive!")
-
-def start_keep_alive():
-    try:
-        port = int(os.environ.get('PORT', 8080))
-        server = HTTPServer(('0.0.0.0', port), KeepAliveHandler)
-        print(f"✅ Keep-alive server running on http://0.0.0.0:{port}")
-        server.serve_forever()
-    except Exception as e:
-        print(f"❌ Failed to start keep-alive server: {e}")
-
-threading.Thread(target=start_keep_alive, daemon=True).start()
 
 import discord
 from discord.ext import commands
