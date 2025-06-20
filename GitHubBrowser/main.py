@@ -1,11 +1,14 @@
+import os
 import threading
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 def start_keep_alive():
-    server = HTTPServer(('0.0.0.0', 8080), SimpleHTTPRequestHandler)
+    port = int(os.environ.get("PORT", 8080))  # Use Render's provided port or fallback
+    server = HTTPServer(("0.0.0.0", port), SimpleHTTPRequestHandler)
+    print(f"Starting keep-alive server on port {port}")
     server.serve_forever()
 
-threading.Thread(target=start_keep_alive).start()
+threading.Thread(target=start_keep_alive, daemon=True).start()
 
 import discord
 from discord.ext import commands
