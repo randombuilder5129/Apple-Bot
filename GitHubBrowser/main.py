@@ -365,3 +365,33 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Failed to start bot: {e}")
         sys.exit(1)
+
+ # Health Checker (port)
+from aiohttp import web
+import asyncio
+import os
+
+async def health_check(request):
+    return web.json_response({"status": "healthy", "bot": "Apple Bot"})
+
+async def start_web_server():
+    app = web.Application()
+    app.router.add_get('/health', health_check)
+    
+    port = int(os.environ.get('PORT', 8080))
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, '0.0.0.0', port)
+    await site.start()
+    print(f"Health check server running on port {port}")
+
+# Add this near where you start your bot
+async def main():
+    # Start the web server for health checks
+    await start_web_server()
+    # Start your Discord bot (your existing bot.run() code)
+    await bot.start(TOKEN)
+
+# Replace bot.run(TOKEN) with:
+if __name__ == "__main__":
+    asyncio.run(main())
