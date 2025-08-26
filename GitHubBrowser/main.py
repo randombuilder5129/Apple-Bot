@@ -367,16 +367,23 @@ if __name__ == "__main__":
         sys.exit(1)
 
  # Health Checker (port)
-from aiohttp import web
-import asyncio
 import os
+import asyncio
+from aiohttp import web
 
 async def health_check(request):
-    return web.json_response({"status": "healthy", "bot": "Apple Bot"})
+    """Simple health check endpoint"""
+    return web.json_response({
+        "status": "healthy",
+        "bot": "Apple Bot",
+        "message": "Bot is running successfully"
+    })
 
-async def start_web_server():
+async def start_health_server():
+    """Start a simple health check web server"""
     app = web.Application()
     app.router.add_get('/health', health_check)
+    app.router.add_get('/', health_check)  # Root endpoint too
     
     port = int(os.environ.get('PORT', 8080))
     runner = web.AppRunner(app)
@@ -385,13 +392,16 @@ async def start_web_server():
     await site.start()
     print(f"Health check server running on port {port}")
 
-# Add this near where you start your bot
-async def main():
-    # Start the web server for health checks
-    await start_web_server()
-    # Start your Discord bot (your existing bot.run() code)
-    await bot.start(TOKEN)
+# Add this function to run both the bot and health server
+async def run_bot_with_health_server():
+    """Run both the Discord bot and health server concurrently"""
+    # Start the health server
+    await start_health_server()
+    
+    # Start your Discord bot (replace this with your existing bot.run() call)
+    # If your bot uses bot.run(TOKEN), change it to:
+    # await bot.start(TOKEN)
 
-# Replace bot.run(TOKEN) with:
+# In your main section, replace bot.run(TOKEN) with:
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(run_bot_with_health_server())
