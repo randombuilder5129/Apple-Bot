@@ -367,41 +367,15 @@ if __name__ == "__main__":
         sys.exit(1)
 
  # Health Checker (port)
+from flask import Flask
 import os
-import asyncio
-from aiohttp import web
 
-async def health_check(request):
-    """Simple health check endpoint"""
-    return web.json_response({
-        "status": "healthy",
-        "bot": "Apple Bot",
-        "message": "Bot is running successfully"
-    })
+app = Flask(__name__)
 
-async def start_health_server():
-    """Start a simple health check web server"""
-    app = web.Application()
-    app.router.add_get('/health', health_check)
-    app.router.add_get('/', health_check)  # Root endpoint too
-    
-    port = int(os.environ.get('PORT', 8080))
-    runner = web.AppRunner(app)
-    await runner.setup()
-    site = web.TCPSite(runner, '0.0.0.0', port)
-    await site.start()
-    print(f"Health check server running on port {port}")
+@app.route("/")
+def home():
+    return "✅ Service is running!"
 
-# Add this function to run both the bot and health server
-async def run_bot_with_health_server():
-    """Run both the Discord bot and health server concurrently"""
-    # Start the health server
-    await start_health_server()
-    
-    # Start your Discord bot (replace this with your existing bot.run() call)
-    # If your bot uses bot.run(TOKEN), change it to:
-    # await bot.start(TOKEN)
-
-# In your main section, replace bot.run(TOKEN) with:
 if __name__ == "__main__":
-    asyncio.run(run_bot_with_health_server())
+    port = int(os.environ.get("PORT", 3000))
+    app.run(host="0.0.0.0", port=port)
