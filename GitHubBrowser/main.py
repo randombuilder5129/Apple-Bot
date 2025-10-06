@@ -368,7 +368,7 @@ class AppleBot(commands.Bot):
         else:
             logger.error(f"Unhandled error in {ctx.command}: {error}")
             await ctx.send("An unexpected error occurred.")
- # Flask thingy
+ # Flask Health Check/Port
 if __name__ == "__main__":
     flask_thread = threading.Thread(target=run_flask)
     flask_thread.start()
@@ -388,17 +388,3 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"Failed to start bot: {e}")
         sys.exit(1)
-
- # Health Checker (port)
-from flask import Flask
-import os
-
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "✅ Service is running on Render!"
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 3000))
-    app.run(host="0.0.0.0", port=port)
