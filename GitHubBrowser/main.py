@@ -305,7 +305,9 @@ class AppleBot(commands.Bot):
     
     async def on_ready(self):
         """Called when bot is ready"""
-        from datetime import datetime, timezone datetime.now(timezone.utc)
+        from datetime import datetime, timezone
+        # Example usage:
+        now_utc = datetime.now(timezone.utc)
         self.start_time = datetime.utcnow()
         self.commands_used = 0
         self.new_members = 0
