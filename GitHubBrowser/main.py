@@ -7,7 +7,20 @@ import sys
 from dotenv import load_dotenv
 from datetime import datetime
 import pytz
+import threading
+from flask import Flask
 
+# Flask app and runner
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return "I'm alive! The Discord bot is running."
+
+def run_flask():
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
+    
 # Load environment variables
 load_dotenv()
 
@@ -355,6 +368,14 @@ class AppleBot(commands.Bot):
         else:
             logger.error(f"Unhandled error in {ctx.command}: {error}")
             await ctx.send("An unexpected error occurred.")
+ # Flask thingy
+if __name__ == "__main__":
+    flask_thread = threading.Thread(target=run_flask)
+    flask_thread.start()
+
+    # Your existing Discord bot startup code goes here
+    # For example:
+    # bot.run(YOUR_DISCORD_BOT_TOKEN)
 
 # Create and run bot
 bot = AppleBot()
