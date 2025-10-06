@@ -25,32 +25,20 @@ def run_flask():
 load_dotenv()
 
 # Load Database
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://liamzurline_db_user:<2GuyzpXogJtWTzEa>@apple-bot.u1mt22z.mongodb.net/?retryWrites=true&w=majority&appName=Apple-Bot";
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+uri = "mongodb+srv://liamzurline_db_user:<2GuyzpXogJtWTzEa>@apple-bot.u1mt22z.mongodb.net/?retryWrites=true&w=majority&appName=Apple-Bot"
 
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
+# Create a new client and connect to the server
+client = MongoClient(uri, server_api=ServerApi('1'))
 
+# Send a ping to confirm a successful connection
+try:
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(e)
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
